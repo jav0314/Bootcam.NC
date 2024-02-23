@@ -19,25 +19,31 @@ namespace Bootcam.NC.Controllers
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
-        public WeatherForecast Get()
+        public IEnumerable<WeatherForecast> Get()
         {
-            //return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            DateTime Timer = new DateTime(2003, 10, 03);
+            return Enumerable.Range(1, 5).Select((index) => FuncionPrueba(index))
+            .ToArray();
+        }
+
+            WeatherForecast FuncionPrueba(int index)
+            {
+                return new WeatherForecast
+                {
+                    Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
+                    TemperatureC = Random.Shared.Next(-20, 55),
+                    Summary = Summaries[Random.Shared.Next(Summaries.Length)],
+                    Name = "Hola"
+                };
+            }
+            //WeatherForecast ClaseEjemplo = new WeatherForecast
             //{
-            //    Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
+            //    Date = DateOnly.FromDateTime(DateTime.Now.AddDays(1)),
             //    TemperatureC = Random.Shared.Next(-20, 55),
             //    Summary = Summaries[Random.Shared.Next(Summaries.Length)],
             //    Name = "Hola"
-            //})
-            //.ToArray();
-
-            WeatherForecast ClaseEjemplo = new WeatherForecast
-            {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(1)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)],
-                Name = "Hola"
-            };
-            return ClaseEjemplo;
+            //};
+            //return ClaseEjemplo;
         }
     }
 }

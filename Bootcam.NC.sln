@@ -3,7 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bootcam.NC", "Bootcam.NC\Bootcam.NC.csproj", "{022F942C-FEB5-41BC-A7D7-2B6BF1C20761}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootcam.NC", "Bootcam.NC\Bootcam.NC.csproj", "{022F942C-FEB5-41BC-A7D7-2B6BF1C20761}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{3314C625-4701-4561-AB96-7145B00C02A6}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		Bootcam.NC\appsettings.Development.json = Bootcam.NC\appsettings.Development.json
+		Bootcam.NC\appsettings.json = Bootcam.NC\appsettings.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

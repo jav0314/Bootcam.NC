@@ -12,3 +12,4 @@ namespace Bootcam.NC
         public string? Name { get; set; }
     }
 }
+ 
