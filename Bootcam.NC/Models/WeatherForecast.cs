@@ -1,4 +1,4 @@
-namespace Bootcam.NC
+namespace Bootcam.NC.Models
 {
     public class WeatherForecast
     {
@@ -12,4 +12,3 @@ namespace Bootcam.NC
         public string? Name { get; set; }
     }
 }
- 

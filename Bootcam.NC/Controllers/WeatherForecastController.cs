@@ -1,4 +1,7 @@
+using Bootcam.NC.Models;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Reflection;
 
 namespace Bootcam.NC.Controllers
 {
@@ -18,32 +21,23 @@ namespace Bootcam.NC.Controllers
             _logger = logger;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
-        {
-            DateTime Timer = new DateTime(2003, 10, 03);
-            return Enumerable.Range(1, 5).Select((index) => FuncionPrueba(index))
-            .ToArray();
-        }
+        //[HttpGet(Name = "GetWeatherForecast")]
+        //public IEnumerable<WeatherForecast> Get()
+        //{
+        //    DateTime Timer = new DateTime(2003, 10, 03);
+        //    return Enumerable.Range(1, 5).Select((index) => FuncionPrueba(index))
+        //    .ToArray();
+        //}
 
-            WeatherForecast FuncionPrueba(int index)
-            {
-                return new WeatherForecast
-                {
-                    Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                    TemperatureC = Random.Shared.Next(-20, 55),
-                    Summary = Summaries[Random.Shared.Next(Summaries.Length)],
-                    Name = "Hola"
-                };
-            }
-            //WeatherForecast ClaseEjemplo = new WeatherForecast
-            //{
-            //    Date = DateOnly.FromDateTime(DateTime.Now.AddDays(1)),
-            //    TemperatureC = Random.Shared.Next(-20, 55),
-            //    Summary = Summaries[Random.Shared.Next(Summaries.Length)],
-            //    Name = "Hola"
-            //};
-            //return ClaseEjemplo;
-        }
+        //    WeatherForecast FuncionPrueba(int index)
+        //    {
+        //        return new WeatherForecast
+        //        {
+        //            Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
+        //            TemperatureC = Random.Shared.Next(-20, 55),
+        //            Summary = Summaries[Random.Shared.Next(Summaries.Length)],
+        //            Name = "Hola"
+        //        };
+        //    }        
     }
 }
