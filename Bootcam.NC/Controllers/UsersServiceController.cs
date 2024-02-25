@@ -1,4 +1,5 @@
-﻿using Bootcam.NC.Models;
+﻿using Bootcam.NC.Bll;
+using Bootcam.NC.Models;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -9,32 +10,20 @@ namespace Bootcam.NC.Controllers
     [ApiController]
     public class UsersServiceController : ControllerBase
     {
+        UsersBll UsersBll = new UsersBll();
         // GET: api/<UsersServiceController>
         [HttpGet]
         public List<UsersServiceModel> Get()
         {
-            List<UsersServiceModel> ListUser = new List<UsersServiceModel>();
-
-            ListUser.Add(new UsersServiceModel
-            {
-                Name = "Javier",
-                LastName = "Merida",
-                Age = 15, 
-            });
-            ListUser.Add(new UsersServiceModel
-            {
-                Name = "Javier2",
-                LastName = "Merida2",
-                Age = 20,
-            });
+            List<UsersServiceModel> ListUser = UsersBll.GetUsers();
             return ListUser;
         }
 
         // GET api/<UsersServiceController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public UsersServiceModel Get(int id)
         {
-            return "value";
+            return UsersBll.GetUser(id);
         }
 
         // POST api/<UsersServiceController>
